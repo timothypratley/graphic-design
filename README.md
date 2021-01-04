@@ -27,4 +27,4 @@ SciCloj logo banner - semi-transparent
 
 ## Original logo
 
-![SciCloj original logo](https://clojurians.zulipchat.com/user_uploads/9096/LeJ9kWgw6RlwFbYl0oX4ozZ1/Screen-Shot-2019-02-10-at-10.45.04-am.png)
+![SciCloj original logo](https://raw.githubusercontent.com/scicloj/graphic-design/live/classic-designs/scicloj-logo-2018.png)
