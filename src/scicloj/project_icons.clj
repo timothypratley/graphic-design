@@ -35,6 +35,8 @@
 ;; These recommendations are intended as a starting point to help you be creative.
 ;; Variations on these themes are encouraged.
 ;; Our goal is harmony rather than standardization.
+;;
+;; ## Palette
 
 (def palette-default
   ["#FFFFFF"                                                ; White background
@@ -60,12 +62,16 @@
                 [:td {:style {:backgroundColor color}}
                  color]))))
 
+;; ## Font
+
 (def clojure-font "'Open Sans',sans-serif;")
 
 ^{:kindly/kind :kind/hiccup}
 [:div {:style {:font-size "3em"
                :font-family (str "font-family: " clojure-font)}}
  clojure-font]
+
+;; ## Size
 
 (def config-default
   {:width       256
@@ -84,6 +90,8 @@
                           attrs)]
         components))
 
+;; ## Backgrounds
+
 (defn backgrounds [{:keys [width height palette]}]
   [["circle"
     [:circle {:fill   (palette 0)
@@ -93,6 +101,8 @@
               :stroke "none"}]]
    ["clear"
     [:g]]])
+
+;; ## Borders
 
 (defn borders [{:keys [palette]}]
   [["circular"
@@ -113,6 +123,8 @@
              :d      "M -112,0 Q -112,112 0,112"}]
      [:path {:stroke (palette 2)
              :d      "M 112,0 Q 112,-112 0,-112"}]]]])
+
+;; ## Centers
 
 (defn centers [{:keys [palette width font-family]}]
   [["Clay"
@@ -191,6 +203,8 @@
        :style (str "font: 100px sans-serif; font-family: " font-family)}
       "D L"]]]])
 
+;; ## Rendering
+
 (defn render-icon [config dir filename components]
   (doto (icon config components)
     (dio/render-svg (doto (io/file dir (str filename ".svg"))
@@ -219,11 +233,12 @@
 (render-components config-default "components")
 (render-icons config-default "icons")
 
-(defn -main []
+(defn -main [& args]
   (kindly-default/setup!)
   (clay/start!)
   (scicloj.clay.v2.api/generate-and-show-namespace-quarto!
     "src/scicloj/project_icons.clj"
     {}))
 
-(-main)
+(comment
+  (-main))

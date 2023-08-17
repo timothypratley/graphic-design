@@ -1,3 +1,6 @@
 {:deps {dali/dali                  {:mvn/version "1.0.2"}
         org.scicloj/clay           {:mvn/version "2-alpha31"}
-        org.scicloj/kindly-default {:mvn/version "1-alpha10"}}}
+        org.scicloj/kindly-default {:mvn/version "1-alpha10"}}
+ :aliases {:dev {}
+           ;; compile html with `clojure -M:html`
+           :html {:main-opts ["-m" "scicloj.project-icons"]}}}
