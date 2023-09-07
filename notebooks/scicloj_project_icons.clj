@@ -6,6 +6,7 @@
             [scicloj.graphic-design.centers :as cen]
             [scicloj.graphic-design.config :as config]
             [scicloj.graphic-design.palette :as pal]
+            [scicloj.graphic-design.projects :as projects]
             [scicloj.graphic-design.view :as view]
             [scicloj.kindly.v4.kind :as kind]))
 
@@ -113,14 +114,7 @@ config/*config*
 ^:kindly/hide-code?
 (view/grid 4 (map view/component-card cen/all))
 
-;; ### Border and Center Combinations
+;; ### Project preferences
 
 ^:kindly/hide-code?
-(def combos
-  (for [[cname center] cen/all
-        [bname border] bor/all]
-    [(str cname " " bname)
-     [#'bac/on-white border center]]))
-
-^:kindly/hide-code?
-(view/grid 4 (map view/icon-card combos))
+(view/grid 4 (map view/icon-card projects/projects))
