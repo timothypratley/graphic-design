@@ -148,4 +148,37 @@
     [:line {:x1 -16 :y1 30 :x2 16 :y2 30}]]])
 (comment (view/icon [ml]))
 
+(defn cookbook [{:keys [palette]}]
+  [:g {:id     "cooking pot"
+       :stroke (palette 10)
+       :fill   (palette 10)}
+   [:g {:id "lid"}
+    [:line {:stroke-width 10
+            :x1           -10
+            :y1           -65
+            :x2           10
+            :y2           -65}]
+    [:line {:stroke-width 10
+            :x1           0
+            :y1           -65
+            :x2           0
+            :y2           -55}]
+    [:path {:stroke-width 10
+            :d            "M -68 -38 L 68 -38 25 -50 -25 -50 z"}]]
+   [:g {:id "pot"}
+    [:rect {:stroke-width 10
+            :x            -80
+            :y            -10
+            :width        10
+            :height       1}]
+    [:rect {:stroke-width 10
+            :x            70
+            :y            -10
+            :width        10
+            :height       1}]
+    [:path {:stroke-width 20
+            :d            "M -64 -20 L 64 -20 55 40 -55 40 z"}]]])
+
+(comment (view/icon [cookbook]))
+
 (def all (view/fns))
