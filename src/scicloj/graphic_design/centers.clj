@@ -130,6 +130,39 @@
     "~"]])
 (comment (view/icon [metamorph]))
 
+(defn metamorph2 [{:keys [palette font-family]}]
+  (let [m "M -55 55 L -55 -55 -18 -55 -18 55 18 55 18 -55 55 -55 55 55"]
+    [:g {:id           "tilde"
+         :stroke       (palette 6)
+         :stroke-width 20
+         :stroke-linecap "square"}
+     [:path {:stroke       (palette 7)
+             :stroke-width 30
+             :d m}]
+     [:path {:d m}]
+     [:path {:stroke (palette 7)
+             :stroke-width 10
+             :stroke-linecap "round"
+             :d "M -67 65 L -43 65"}]
+     [:path {:stroke (palette 7)
+             :stroke-width 10
+             :stroke-linecap "round"
+             :d "M 67 65 L 43 65"}]
+     [:path {:stroke (palette 7)
+             :stroke-width 10
+             :stroke-linecap "round"
+             :d "M -30 -20 L -6 -20"}]
+     [:path {:stroke (palette 7)
+             :stroke-width 10
+             :stroke-linecap "round"
+             :d "M 30 20 L 6 20"}]]))
+(comment (view/icon [metamorph2])
+         (require '[scicloj.kind-portal.v1.api])
+         (scicloj.kind-portal.v1.api/kindly-submit-context
+           {:value (view/icon [scicloj.graphic-design.backgrounds/on-white
+                               scicloj.graphic-design.borders/octo
+                               metamorph2])}))
+
 (defn ml [{:keys [palette]}]
   [:g {:id     "robot head"
        :stroke (palette 4)
