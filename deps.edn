@@ -5,9 +5,9 @@
                                    #_#_:mvn/version "1-alpha2-SNAPSHOT"}}
  :aliases
  {:dev   {:extra-paths ["notebooks"]
-          :extra-deps  {org.scicloj/clay        {:mvn/version "2-alpha32"}
+          :extra-deps  {org.scicloj/clay        {:mvn/version "2-alpha39"}
                         org.scicloj/kind-portal {:local/root "../kind-portal"
                                                  #_#_:mvn/version "1-alpha4"}}}
   ;; compile html with `clojure -M:build`
-  :build {:extra-deps {org.scicloj/clay {:mvn/version "2-alpha32"}}
+  :build {:extra-deps {org.scicloj/clay {:mvn/version "2-alpha39"}}
           :main-opts  ["-m" "scicloj.graphic-design.main"]}}}
