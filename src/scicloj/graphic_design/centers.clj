@@ -16,6 +16,21 @@
            :d    "M 12.0 7.2 C 10.5 5.6 8.1 5.2 6.3 6.7 C 4.5 8.1 4.2 10.6 5.7 12.4 L 12.0 18.3 L 18.3 12.4 C 19.7 10.6 19.5 8.1 17.7 6.7 C 15.8 5.2 13.4 5.6 12.0 7.2 Z"}]])
 (comment (view/icon [kindly]))
 
+(defn noj [{:keys [palette]}]
+  (let [len 90
+        l2 45
+        w 10
+        -len (- len)
+        -l2 (- l2)
+        -w (- w)]
+    [:g {:id "north star"
+         :fill (palette 6)}
+     [:path {:d    [:M 0 -len :L w 0 0 len -w 0 :Z]}]
+     [:path {:d    [:M -len 0 :L 0 w len 0 0 -w :Z]}]
+     [:path {:d    [:M -l2 -l2 :L -w 0 l2 l2 w 0 :Z]}]
+     [:path {:d    [:M -l2 l2 :L -w 0 l2 -l2 w 0 :Z]}]]))
+(comment (view/icon [noj]))
+
 (defn tmd1 [{:keys [palette]}]
   [:g {:id "grid of data with header"}
    [:rect {:fill         (palette 8)

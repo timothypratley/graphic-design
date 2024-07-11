@@ -11,4 +11,4 @@
    :attrs       {:fill            "none"
                  :stroke-linecap  "round"
                  :stroke-linejoin "round"
-                 :stroke-width    32}})
+                 :stroke-width    31}})
