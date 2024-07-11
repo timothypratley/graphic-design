@@ -17,9 +17,9 @@
 (comment (view/icon [kindly]))
 
 (defn noj [{:keys [palette]}]
-  (let [len 90
-        l2 45
-        w 10
+  (let [len 100
+        l2 (/ len 2.0)
+        w 12
         -len (- len)
         -l2 (- l2)
         -w (- w)]
