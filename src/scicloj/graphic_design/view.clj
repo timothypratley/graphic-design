@@ -18,7 +18,7 @@
   (let [n (count elements)
         n2 (int (Math/ceil (Math/sqrt n)))]
     (kind/hiccup
-      (into [:svg {:xmlns "http://www.w3.org/2000/svg"
+      (into [:svg {:xmlns   "http://www.w3.org/2000/svg"
                    :viewBox (str "-128 -128 " (+ 128 (* 275 n2)) " " (* 256 n2))}]
             (map-indexed
               (fn [idx element]
@@ -31,9 +31,9 @@
             elements))))
 
 (defn color-card [idx [color description text-color]]
-  [:div {:style {:padding         10
-                 :backgroundColor color
-                 :color           text-color}}
+  [:div {:style {:padding          10
+                 :background-color color
+                 :color            text-color}}
    [:div idx]
    [:div color]
    [:div description]])
