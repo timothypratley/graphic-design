@@ -24,8 +24,8 @@
 
 (defn -main [& args]
   (render-icons)
-  (clay/start!)
-  (scicloj.clay.v2.api/make! {}))
+  (clay/make! {:show false})
+  (System/exit 0))
 
 (comment
   (-main))
